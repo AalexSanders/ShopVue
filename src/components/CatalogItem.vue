@@ -6,7 +6,7 @@
           <h2>{{ product.title }}</h2>
           <img :src="product.image" :alt="product.title" />
           <p>Цена: {{ product.price }}$</p>
-          <button @click="addToCart(product)">Добавить в корзину</button>
+          <button>Добавить в корзину</button>
         </div>
       </div>
     </div>
@@ -31,12 +31,7 @@
           console.error(error);
         });
     },
-    methods: {
-      addToCart(product) {
-        // Реализуйте логику добавления продукта в корзину
-        console.log('Добавлен в корзину:', product);
-      },
-    },
+    methods: {},
   };
   </script>
   
