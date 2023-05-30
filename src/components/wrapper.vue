@@ -24,9 +24,6 @@
         },
         computed: {},
         methods: {
-            addToCart(product) {
-                this.cartItems.push(product);
-            },
         },
         watch:{},
         mounted() {}

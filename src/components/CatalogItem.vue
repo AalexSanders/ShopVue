@@ -7,7 +7,8 @@
             <img :src="product.image" :alt="product.title" />
           </div>
           <p>Цена: {{ product.price }}$</p>
-          <button @click="addToCart(product)">Добавить в корзину</button>
+          <button @click="addToCart(product)">В корзину!</button>
+          <button>В избранное!</button>
         </div>
       </div>
     </div>
@@ -19,9 +20,10 @@
   export default {
     data() {
       return {
-        products: [],
+        products: [], //список вещей
       };
     },
+
     mounted() {
       axios
         .get('https://fakestoreapi.com/products')
@@ -32,6 +34,7 @@
           console.error(error);
         });
     },
+
     methods: {
       addToCart(product) {
         this.$emit('add-to-cart', product);

@@ -9,6 +9,7 @@
 
   export default {
     name: "app",
+    
     components: {
       Wrapper
     }
@@ -17,6 +18,6 @@
 
 <style>
   .app {
-          flex-basis: 25%;
-      }
+    flex-basis: 50%;
+  }
 </style>

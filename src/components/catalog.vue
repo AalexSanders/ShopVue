@@ -19,11 +19,13 @@ export default {
     CatalogItem,
     Cart,
   },
+
   data() {
     return {
       cartItems: [],
     };
   },
+
   methods: {
     addToCart(product) {
       const existingItem = this.cartItems.find(item => item.id === product.id);
@@ -33,9 +35,11 @@ export default {
         this.cartItems.push({ ...product, quantity: 1 });
       }
     },
+
     removeFromCart(itemId) {
       this.cartItems = this.cartItems.filter(item => item.id !== itemId);
     },
+    
     updateCartItem(item) {
       item.quantity = parseInt(item.quantity, 10);
       if (item.quantity <= 0) {

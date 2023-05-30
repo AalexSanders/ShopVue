@@ -37,21 +37,26 @@
   <script>
   export default {
     props: ['cartItems'],
+
     data() {
       return {
         showCart: false,
       };
     },
+
     methods: {
       removeFromCart(itemId) {
         this.$emit('remove-from-cart', itemId);
       },
+
       updateCartItem(item) {
         this.$emit('update-cart-item', item);
       },
+
       closeCart() {
         this.showCart = false;
       },
+      
       getTotalPrice() {
         return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
       },
