@@ -48,25 +48,31 @@
   
   .product-card {
     width: 200px;
+    height: 350px;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
   }
   
   .product-title {
     font-size: 16px;
+    margin-bottom: 10px;
   }
   
   .product-image {
-    width: 100%;
-    height: 200px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
   
   .product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
   </style>
   
