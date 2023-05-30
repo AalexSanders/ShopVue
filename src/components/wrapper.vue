@@ -1,6 +1,6 @@
 <template>
-    <div class="Wrapper">
-
+    <div class="wrapper">
+        <p>я ебанутый</p>
     </div>
 </template>
 
@@ -12,20 +12,20 @@
     export default {
         name: 'Wrapper',
         components: {
-            Catalog,
-            CatalogItem,
-            Cart
+            //Catalog,
+            //CatalogItem,
+            //Cart
         }, 
         props: {},
-        data: {
-            return() {
+        data() {
+            return {
                 title: 'Wrapper'
             }
         },
         computed: {},
         methods: {},
         watch:{},
-        mounted: {}
+        mounted() {}
     }
 </script>
 

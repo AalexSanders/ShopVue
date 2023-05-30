@@ -9,15 +9,15 @@
         name: 'cart',
         components: {}, 
         props: {},
-        data: {
-            return() {
+        data() {
+            return {
                 title: 'Wrapper'
             }
         },
         computed: {},
         methods: {},
         watch:{},
-        mounted: {}
+        mounted() {}
     }
 </script>
 

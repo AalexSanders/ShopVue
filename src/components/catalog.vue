@@ -9,17 +9,15 @@
 
 <script>
     import CatalogItem from './CatalogItem.vue';
-import CatalogItem from './CatalogItem.vue'
 
     export default {
         name: 'catalog',
         components: {
-    CatalogItem,
-    CatalogItem
-}, 
+            CatalogItem
+        }, 
         props: {},
-        data: {
-            return() {}
+        data() {
+            return {}
         },
         computed: {},
     }
