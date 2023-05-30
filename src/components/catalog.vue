@@ -1,32 +1,35 @@
 <template>
     <div class="catalog">
-
+        <h1>Catalog</h1>
+        <div class="catalog_list">
+            <CatalogItem />
+        </div>
     </div>
 </template>
 
 <script>
+    import CatalogItem from './CatalogItem.vue';
+import CatalogItem from './CatalogItem.vue'
+
     export default {
         name: 'catalog',
-        components: {}, 
+        components: {
+    CatalogItem,
+    CatalogItem
+}, 
         props: {},
         data: {
-            return() {
-                title: 'Wrapper'
-            }
+            return() {}
         },
         computed: {},
-        methods: {},
-        watch:{},
-        mounted: {}
     }
 </script>
 
 <style>
     .catalog {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: center;
-        max-width: 900px;
-        margin: 0 auto;
     }
 </style>

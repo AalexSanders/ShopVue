@@ -1,20 +1,20 @@
 <template>
-    <div class="wrapper">
+    <div class="Wrapper">
 
     </div>
 </template>
 
 <script>
-    import catalog from './catalog.vue'
-    import catalogItem from './catalog-item.vue'
-    import cart from './cart.vue'
+    import Catalog from './Catalog.vue';
+    import CatalogItem from './CatalogItem.vue';
+    import Cart from './Cart.vue';
 
     export default {
-        name: 'wrapper',
+        name: 'Wrapper',
         components: {
-            catalog,
-            catalogItem,
-            cart
+            Catalog,
+            CatalogItem,
+            Cart
         }, 
         props: {},
         data: {
@@ -31,9 +31,6 @@
 
 <style>
     .wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         max-width: 900px;
         margin: 0 auto;
     }
