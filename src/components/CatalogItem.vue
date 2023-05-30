@@ -7,7 +7,8 @@
             <img :src="product.image" :alt="product.title" />
           </div>
           <p>Цена: {{ product.price }}$</p>
-          <button>Добавить в корзину</button>
+          <button>В корзину</button>
+          <button>В избранное</button>
         </div>
       </div>
     </div>
