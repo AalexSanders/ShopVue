@@ -7,8 +7,7 @@
             <img :src="product.image" :alt="product.title" />
           </div>
           <p>Цена: {{ product.price }}$</p>
-          <button>В корзину</button>
-          <button>В избранное</button>
+          <button @click="addToCart(product)">Добавить в корзину</button>
         </div>
       </div>
     </div>
@@ -35,6 +34,7 @@
     },
     methods: {
       addToCart(product) {
+        this.$emit('add-to-cart', product);
       },
     },
   };

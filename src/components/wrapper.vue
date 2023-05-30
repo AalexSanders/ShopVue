@@ -19,11 +19,15 @@
         props: {},
         data() {
             return {
-                title: 'Wrapper'
+                cartItems: [],
             }
         },
         computed: {},
-        methods: {},
+        methods: {
+            addToCart(product) {
+                this.cartItems.push(product);
+            },
+        },
         watch:{},
         mounted() {}
     }
