@@ -1,6 +1,5 @@
 <template>
     <div>
-      <h1>Список продуктов</h1>
       <div class="product-list">
         <div v-for="product in products" :key="product.id" class="product-card">
           <h2 class="product-title">{{ product.title }}</h2>
