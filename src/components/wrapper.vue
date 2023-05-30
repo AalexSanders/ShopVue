@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <p>я ебанутый</p>
+        <Catalog />
     </div>
 </template>
 
@@ -12,9 +12,9 @@
     export default {
         name: 'Wrapper',
         components: {
-            //Catalog,
-            //CatalogItem,
-            //Cart
+            Catalog,
+            CatalogItem,
+            Cart
         }, 
         props: {},
         data() {
