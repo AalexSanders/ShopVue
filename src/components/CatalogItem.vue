@@ -3,8 +3,10 @@
       <h1>Список продуктов</h1>
       <div class="product-list">
         <div v-for="product in products" :key="product.id" class="product-card">
-          <h2>{{ product.title }}</h2>
-          <img :src="product.image" :alt="product.title" />
+          <h2 class="product-title">{{ product.title }}</h2>
+          <div class="product-image">
+            <img :src="product.image" :alt="product.title" />
+          </div>
           <p>Цена: {{ product.price }}$</p>
           <button>Добавить в корзину</button>
         </div>
@@ -31,7 +33,10 @@
           console.error(error);
         });
     },
-    methods: {},
+    methods: {
+      addToCart(product) {
+      },
+    },
   };
   </script>
   
@@ -46,6 +51,22 @@
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
+  }
+  
+  .product-title {
+    font-size: 16px;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   </style>
   
