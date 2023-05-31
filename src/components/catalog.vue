@@ -1,6 +1,6 @@
 <template>
   <div class="catalog">
-    <h1>Каталог</h1>    
+    <h1>Каталог</h1>
     <Cart
       :cartItems="cartItems"
       @remove-from-cart="removeFromCart"
