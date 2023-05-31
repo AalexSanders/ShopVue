@@ -1,13 +1,13 @@
 <template>
-    <div class="catalog">
-        <h1>Каталог</h1>
-        <Cart
-            :cartItems="cartItems"
-            @remove-from-cart="removeFromCart"
-            @update-cart-item="updateCartItem"
-        />
-        <CatalogItem @add-to-cart="addToCart" />
-    </div>
+  <div class="catalog">
+    <h1>Каталог</h1>    
+    <Cart
+      :cartItems="cartItems"
+      @remove-from-cart="removeFromCart"
+      @update-cart-item="updateCartItem"
+    />
+    <CatalogItem @add-to-cart="addToCart" />
+  </div>
 </template>
 
 <script>
@@ -19,13 +19,11 @@ export default {
     CatalogItem,
     Cart,
   },
-
   data() {
     return {
       cartItems: [],
     };
   },
-
   methods: {
     addToCart(product) {
       const existingItem = this.cartItems.find(item => item.id === product.id);
@@ -35,11 +33,9 @@ export default {
         this.cartItems.push({ ...product, quantity: 1 });
       }
     },
-
     removeFromCart(itemId) {
       this.cartItems = this.cartItems.filter(item => item.id !== itemId);
     },
-    
     updateCartItem(item) {
       item.quantity = parseInt(item.quantity, 10);
       if (item.quantity <= 0) {
@@ -51,10 +47,9 @@ export default {
 </script>
 
 <style>
-    .catalog {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-    }
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
