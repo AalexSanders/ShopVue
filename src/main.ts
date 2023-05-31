@@ -5,6 +5,7 @@ import App from './App.vue';
 import Wrapper from './components/Wrapper.vue';
 import '@fortawesome/fontawesome-free/css/all.css';
 
+
 const app = createApp(App);
 app.use(store).use(router);
 app.component('Wrapper', Wrapper);
