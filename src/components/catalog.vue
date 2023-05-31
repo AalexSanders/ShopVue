@@ -15,7 +15,7 @@
 
 <script>
   import CatalogItem from './CatalogItem.vue';
-  import Cart from './Cart.vue';
+  import Cart from './cart.vue';
 
   export default {
     components: {
