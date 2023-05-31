@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="product-filters">
-      <label for="sort">Сортировка: </label>
+      <input type="text" v-model="searchQuery" placeholder="Поиск" />
+      <h>       </h>
+      <label for="sort">Сортировать: </label>
+
       <select id="sort" v-model="selectedSort">
         <option value="default">По умолчанию</option>
         <option value="alphabetical">По алфавиту</option>
@@ -10,7 +13,7 @@
     </div>
 
     <div class="product-list">
-      <div v-for="product in sortedProducts" :key="product.id" class="product-card">
+      <div v-for="product in filteredAndSortedProducts" :key="product.id" class="product-card">
         <h2 class="product-title">{{ product.title }}</h2>
 
         <div class="product-image">
@@ -33,6 +36,7 @@ export default {
     return {
       products: [],
       selectedSort: 'default',
+      searchQuery: '',
     };
   },
 
@@ -48,14 +52,25 @@ export default {
   },
 
   computed: {
-    sortedProducts() {
+    filteredAndSortedProducts() {
+      let filteredProducts = this.products;
+      if (this.searchQuery) {
+        const query = this.searchQuery.toLowerCase();
+        filteredProducts = filteredProducts.filter(product => {
+          return (
+            product.title.toLowerCase().includes(query) ||
+            product.description.toLowerCase().includes(query)
+          );
+        });
+      }
+
       switch (this.selectedSort) {
         case 'alphabetical':
-          return this.products.slice().sort((a, b) => a.title.localeCompare(b.title));
+          return filteredProducts.slice().sort((a, b) => a.title.localeCompare(b.title));
         case 'price':
-          return this.products.slice().sort((a, b) => a.price - b.price);
+          return filteredProducts.slice().sort((a, b) => a.price - b.price);
         default:
-          return this.products;
+          return filteredProducts;
       }
     },
   },
